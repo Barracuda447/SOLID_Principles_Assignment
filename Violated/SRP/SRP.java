@@ -11,15 +11,15 @@ public class SRP {
 
     // Creates an item, validates it, logs, and saves it
     public void createItem(Item item) {
-        // Simple validation
+        // Simple validation (SRP violation)
         if (item == null || item.getName() == null || item.getPrice() <= 0) {
             throw new IllegalArgumentException("Invalid item data.");
         }
 
-        // Logging (SRP violation because it is with the validation)
+        // Logging (SRP violation)
         logger.info("Creating item: " + item.getName());
 
-        // Persisting (SRP violation because it is with the other 2)
+        // Persisting (SRP violation)
         items.add(item);
     }
 
